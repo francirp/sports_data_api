@@ -2,7 +2,7 @@ module SportsDataApi
   module Golf
     class Season
 
-      attr_reader :year, :tournament_hashes, :tournaments
+      attr_reader :year, :season_hash, :tournament_hashes, :tournaments
 
       def initialize(args = {})
         @year = args[:year].try(:to_i)
@@ -14,8 +14,8 @@ module SportsDataApi
       private
 
         def generate_tournaments
-          tournament_hashes.map do |tournament|
-            Tournament.new(year: year, tournament_hash: tournament)
+          tournament_hashes.map do |tournament_hash|
+            Tournament.new(year: year, tournament_hash: tournament_hash)
           end
         end
 

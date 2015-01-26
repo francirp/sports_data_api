@@ -5,8 +5,8 @@ module SportsDataApi
       attr_reader :hole_hash
 
       # simple data attributes
-      ATTRIBUTES = [:number, :par, :yardage]
-      ATTRIBUTES.each do |attr|
+      SIMPLE_ATTRIBUTES = [:number, :par, :yardage]
+      SIMPLE_ATTRIBUTES.each do |attr|
         attr_reader attr
       end
 
@@ -18,7 +18,7 @@ module SportsDataApi
       private
 
         def set_attributes
-          ATTRIBUTES.each do |attr|
+          SIMPLE_ATTRIBUTES.each do |attr|
             instance_variable_set("@#{attr.to_s}".to_sym, @hole_hash[attr.to_s])
           end
         end

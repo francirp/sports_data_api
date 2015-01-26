@@ -6,7 +6,7 @@ module SportsDataApi
       attr_reader :tournament_hash, :year
 
       # simple data attributes
-      SIMPLE_ATTRIBUTES = [:id, :name, :event_type, :purse, :winning_share, :points, :start_date, :end_date, :year]
+      SIMPLE_ATTRIBUTES = [:id, :name, :event_type, :purse, :winning_share, :points, :start_date, :end_date, :year, :status, :coverage]
       SIMPLE_ATTRIBUTES.each do |attr|
         attr_reader attr
       end
